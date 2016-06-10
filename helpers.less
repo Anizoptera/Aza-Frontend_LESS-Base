@@ -1,0 +1,205 @@
+/* CSS Helpers v1.3 */
+
+/* Fonts
+============================================================== */
+@Arial:     Arial, Helvetica, sans-serif;
+@Lucida:    "Lucida Sans Unicode", "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Trebuchet MS", Arial, sans-serif;
+@Myriad:    "Myriad Pro", MyriadPro, "Myriad Pro Regular", "MyriadPro-Regular", Calibri, Arial, Helvetica, sans-serif;
+@Segoe:     "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+@Tahoma:    Tahoma, Geneva, Verdana, sans-serif;
+@Trebuchet: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", Arial, sans-serif;
+@Verdana:   Verdana, Geneva, Tahoma, sans-serif;
+
+@Cambira:   Cambira, Cochin, Georgia, "Times New Roman", Times, serif;
+@Georgia:   Georgia, "Times New Roman", Times, serif;
+@Times:     "Times New Roman", Times, serif;
+
+@Consolas:  Consolas, "Courier New", Courier, monospace;
+@Courier:   "Courier New", Courier, monospace;
+
+
+
+/* General
+============================================================== */
+
+// http://stackoverflow.com/questions/211383/what-methods-of-clearfix-can-i-use
+// http://cssmojo.com/the-very-latest-clearfix-reloaded/
+.g-clr {
+	clear: both;
+	display: block;
+}
+.g-clrfix {
+	zoom: 1;
+	&:after {
+		content: " ";   /* Space is needed for old Opera support */
+		display: block; /* display:table works as well, but prevents margin collapsing for the clrfix-block */
+		clear: both;
+	}
+}
+
+.g-none { display: none; }
+.g-inline { display: inline; }
+.g-block { display: block; }
+.g-inlineBlock { display: inline-block; }
+
+.g-left { text-align: left; }
+.g-right { text-align: right; }
+.g-center { text-align: center; }
+.g-justify { text-align: justify; }
+
+.g-floatLeft { float: left; }
+.g-floatRight { float: right; }
+.g-floatNone { float: none; }
+
+.g-default { cursor: default; }
+.g-pointer { cursor: pointer; }
+.g-text { cursor: text; }
+
+//noinspection CssUnknownProperty
+.g-noSelect,
+.g-noSelect * {
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+}
+
+.g-outline:focus,
+.g-outline:active {
+	outline: 1px dotted;
+}
+.g-noOutline:focus,
+.g-noOutline:active {
+	outline: 0;
+}
+
+.g-lastMargin > :last-child {
+	margin-bottom: 0;
+}
+
+.ellipsis() {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	-o-text-overflow: ellipsis;
+}
+
+.box-sizing(@val) {
+	-moz-box-sizing: @val;
+	-webkit-box-sizing: @val;
+	box-sizing: @val;
+}
+
+.fix9999(@val:150%) {
+	text-indent: @val;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+.emptyBg() {
+	background: url(data:image/gif;base64,);
+}
+
+
+
+/* CSS3
+============================================================== */
+.opacity(@val:0) {
+	opacity: @val / 100;
+	filter: alpha(opacity=@val);
+}
+
+.background-size(@val) {
+	-moz-background-size: @val; /* FF 3.6 */
+	-webkit-background-size: @val; /* Android */
+	-o-background-size: @val;
+	background-size: @val;
+}
+
+.border-radius(@val:0) {
+	-moz-border-radius: @val; /* FF 3.6 */
+	-webkit-border-radius: @val;
+	border-radius: @val;
+}
+.border-radius-tl(@val:0) {
+	-moz-border-radius-topleft: @val;
+	-webkit-border-top-left-radius: @val;
+	border-top-left-radius: @val;
+}
+.border-radius-tr(@val:0) {
+	-moz-border-radius-topright: @val;
+	-webkit-border-top-right-radius: @val;
+	border-top-right-radius: @val;
+}
+.border-radius-bl(@val:0) {
+	-moz-border-radius-bottomleft: @val;
+	-webkit-border-bottom-left-radius: @val;
+	border-bottom-left-radius: @val;
+}
+.border-radius-br(@val:0) {
+	-moz-border-radius-bottomright: @val;
+	-webkit-border-bottom-right-radius: @val;
+	border-bottom-right-radius: @val;
+}
+
+.box-shadow(@val) {
+	-moz-box-shadow: @val; /* FF 3.6 */
+	-webkit-box-shadow: @val;
+	box-shadow: @val;
+}
+
+/*
+.linear-gradient(#ffffff; top, #ffffff 0%, #000000 100%);
+.linear-gradient(transparent; top, #ffffff 0%, #000000 100%);
+.linear-gradient(transparent; top, rgba(255, 255, 255, .35) 0%, rgba(255, 255, 255, .1) 100%);
+*/
+.linear-gradient(@bgcolor, @val) {
+	background-color: e(@bgcolor);
+	background-image: -moz-linear-gradient(@val);		/* FF3.6+ */
+	background-image: -webkit-linear-gradient(@val);	/* Chrome10+,Safari5.1+ */
+	background-image: -o-linear-gradient(@val);			/* Opera 11.10+ */
+	background-image: -ms-linear-gradient(@val);		/* IE10+ */
+	background-image: linear-gradient(@val);			/* W3C */
+}
+
+.transform(@val) {
+	-moz-transform: @val;
+	-webkit-transform: @val;
+	-o-transform: @val;
+	-ms-transform: @val;
+	transform: @val;
+}
+.transform_notOpera(@val) {
+	-moz-transform: @val;
+	-webkit-transform: @val;
+	-ms-transform: @val;
+	transform: @val;
+}
+
+.transform-origin(@val) {
+	-moz-transform-origin: @val;
+	-webkit-transform-origin: @val;
+	-o-transform-origin: @val;
+	-ms-transform-origin: @val;
+	transform-origin: @val;
+}
+
+.transition(@val) {
+	-moz-transition: @val;
+	-webkit-transition: @val;
+	-o-transition: @val;
+	transition: @val;
+}
+.transition_notOpera(@val) {
+	-moz-transition: @val;
+	-webkit-transition: @val;
+	transition: @val;
+}
+
+.animation(@val) {
+	-moz-animation: @val;
+	-webkit-animation: @val;
+	-o-animation: @val;
+	animation: @val;
+}
