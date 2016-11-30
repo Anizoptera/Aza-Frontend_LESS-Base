@@ -1,0 +1,23 @@
+
+/*
+Idiots removed inheritance and set exact values on form elements:
+ https://github.com/necolas/normalize.css/issues/591
+
+Other developers are telling idiots that they're idiots:
+ https://github.com/necolas/normalize.css/issues/642
+*/
+button,
+input,
+optgroup,
+select,
+textarea {
+	font: inherit;
+}
+
+/**
+ * Restore the font weight unset by the previous rule.
+ */
+
+optgroup {
+	font-weight: bold;
+}
