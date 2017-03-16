@@ -1,4 +1,4 @@
-/* CSS Helpers v1.3 */
+/* CSS Helpers v1.3.1 */
 
 /* Fonts
 ============================================================== */
@@ -36,6 +36,10 @@
 		clear: both;
 	}
 }
+
+.g-bold { font-weight: bold; }
+.g-italic { font-style: italic; }
+.g-underline { text-decoration: underline; }
 
 .g-none { display: none; }
 .g-inline { display: inline; }
@@ -176,13 +180,18 @@
 	-ms-transform: @val;
 	transform: @val;
 }
-
 .transform-origin(@val) {
 	-moz-transform-origin: @val;
 	-webkit-transform-origin: @val;
 	-o-transform-origin: @val;
 	-ms-transform-origin: @val;
 	transform-origin: @val;
+}
+.transform-style(@val) {
+	//noinspection CssUnknownProperty
+	-moz-transform-style: @val;
+	-webkit-transform-style: @val;
+	transform-style: @val;
 }
 
 .transition(@val) {
@@ -202,4 +211,15 @@
 	-webkit-animation: @val;
 	-o-animation: @val;
 	animation: @val;
+}
+
+.perspective(@val) {
+	-moz-perspective: @val;
+	-webkit-perspective: @val;
+	perspective: @val;
+}
+.perspective-origin(@val) {
+	-moz-perspective-origin: @val;
+	-webkit-perspective-origin: @val;
+	perspective-origin: @val;
 }
